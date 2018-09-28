@@ -12,8 +12,8 @@ Benchmarks run on:
 
 Last benchmark was ran on September 28th, 2018
 
-| Canonical Forth implemenation of FIB (single loop)        |
-|-----------------------------------------------------------|
+Canonical Forth implemenation of FIB (single loop)
+
 | Language   | Time, s | Compile                            |
 |------------|---------|------------------------------------|
 | Nim        |  0.002  | `nim cpp -d:release fibf.nim`      |
@@ -25,8 +25,8 @@ Last benchmark was ran on September 28th, 2018
 | iForth     |  0.0    | `iforth include fibf-iforth.fs`    |
 
 
-| Benchmark version (recursive calls)                   |
-|-------------------------------------------------------|
+Benchmark version (recursive calls)
+
 | Language | Time, s | Compile                          |
 |----------|---------|----------------------------------|
 | Nim      |  0.4    | `nim cpp -d:release fib.nim`     |
