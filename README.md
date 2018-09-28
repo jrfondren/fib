@@ -1,5 +1,10 @@
 # Comments on "Recursive Fibonacci Benchmark using top languages on Github"
 
+Notes:
+
+- nim is obviously cheating
+- whether 2.9bil is the 46th or actually the 47th (or the 48th) fibonacci number, is beside the point
+
 Languages: ATS, Forth (Gforth, SwiftForth, iForth), C, C++, Nim
 
 This code performs a recursive fibonacci to the 46th position with the result of 2,971,215,073.
