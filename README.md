@@ -39,9 +39,9 @@ Benchmark version (recursive calls)
 
 ## Versions
 
-ATS: 0.3.12
-Gforth: 0.7.3 (64bit)
-SwiftForth: 3.7.3
-iForth: 6.0.8
-GCC: 6.3.0
-Nim: 0.16.0
+-- ATS: 0.3.12
+-- Gforth: 0.7.3 (64bit)
+-- SwiftForth: 3.7.3
+-- iForth: 6.0.8
+-- GCC: 6.3.0
+-- Nim: 0.16.0
