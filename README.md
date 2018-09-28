@@ -17,7 +17,7 @@ Benchmarks run on:
 
 Last benchmark was ran on September 28th, 2018
 
-Canonical Forth implemenation of FIB (single loop)
+Canonical Forth implementation of FIB (single loop)
 
 | Language   | Time, s | Compile                            |
 |------------|---------|------------------------------------|
