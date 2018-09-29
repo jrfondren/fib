@@ -5,7 +5,7 @@ Notes:
 - nim is obviously cheating
 - whether 2.9bil is the 46th or actually the 47th (or the 48th) fibonacci number, is beside the point
 
-Languages: ATS, Forth (Gforth, SwiftForth, iForth), C, C++, Nim
+Languages: ATS, Forth (Gforth, SwiftForth, iForth), C, C++, Nim, Zig
 
 This code performs a recursive fibonacci to the 46th position with the result of 2,971,215,073.
 
@@ -19,27 +19,29 @@ Last benchmark was ran on September 28th, 2018
 
 Canonical Forth implementation of FIB (single loop)
 
-| Language   | Time, s | Compile                            |
-|------------|---------|------------------------------------|
-| Nim        |  0.002  | `nim cpp -d:release fibf.nim`      |
-| C++        |  0.003  | `g++ -O3 -o fibf fibf.cpp`         |
-| C          |  0.003  | `gcc -O3 -o fibf fibf.c`           |
-| ATS        |  0.004  | `patscc -O3 -o fibf-ats fibf.dats` |
-| SwiftForth |  0.005  | `sf fibf.fs`                       |
-| gForth     |  0.020  | `gforth fibf.fs`                   |
-| iForth     |  0.0    | `iforth include fibf-iforth.fs`    |
+| Language   | Time, s | Compile                                 |
+|------------|---------|-----------------------------------------|
+| Zig        |  0.001  | `zig build-exe fibf.zig --release-fast` |
+| Nim        |  0.002  | `nim cpp -d:release fibf.nim`           |
+| C++        |  0.003  | `g++ -O3 -o fibf fibf.cpp`              |
+| C          |  0.003  | `gcc -O3 -o fibf fibf.c`                |
+| ATS        |  0.004  | `patscc -O3 -o fibf-ats fibf.dats`      |
+| SwiftForth |  0.005  | `sf fibf.fs`                            |
+| gForth     |  0.020  | `gforth fibf.fs`                        |
+| iForth     |  0.0    | `iforth include fibf-iforth.fs`         |
 
 
 Benchmark version (recursive calls)
 
-| Language | Time, s | Compile                          |
-|----------|---------|----------------------------------|
-| Nim      |  0.4    | `nim cpp -d:release fib.nim`     |
-| ATS      |  4.5    | `patscc -O3 -o fib-ats fib.dats` |
-| C++      |  5.3    | `g++ -O3 -o fib fib.cpp`         |
-| C        |  5.4    | `gcc -O3 -o fib fib.c`           |
-| iForth   | 18      | `iforth include fib.fs`          |
-| gForth   | 90      | `gforth fib.fs`                  |
+| Language | Time, s | Compile                                |
+|----------|---------|----------------------------------------|
+| Nim      |  0.4    | `nim cpp -d:release fib.nim`           |
+| ATS      |  4.5    | `patscc -O3 -o fib-ats fib.dats`       |
+| C++      |  5.3    | `g++ -O3 -o fib fib.cpp`               |
+| C        |  5.4    | `gcc -O3 -o fib fib.c`                 |
+| Zig      |  6.4    | `zig build-exe fib.zig --release-fast` |
+| iForth   | 18      | `iforth include fib.fs`                |
+| gForth   | 90      | `gforth fib.fs`                        |
 
 
 ## Versions
@@ -50,3 +52,4 @@ Benchmark version (recursive calls)
 - iForth: 6.0.8
 - GCC: 6.3.0
 - Nim: 0.16.0
+- Zig: 0.3.0

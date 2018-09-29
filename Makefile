@@ -1,22 +1,26 @@
 SHELL=bash
 T=for x in 1 2 3; do time 
 E=; done; echo
+LANGS=ats c cc nim zig
+TARGS=$(patsubst %,fib-%,$(LANGS)) $(patsubst %,fibf-%,$(LANGS))
 
-all:: fib-ats fib-c fib-cc fib-nim fibf-ats fibf-c fibf-cc fibf-nim
+all:: $(TARGS)
 
-clean::; rm -fv fib{,f}-{ats,c,cc,cr,nim} *.o *_dats.c
+clean::; rm -fv fib{,f}-{ats,c,cc,cr,nim,zig} *.o *_dats.c
 
 bench::
 	$T ./fib-ats $E
 	$T ./fib-c $E
 	$T ./fib-cc $E
 	$T ./fib-nim $E
+	$T ./fib-zig $E
 
 benchf::
 	$T ./fibf-ats $E
 	$T ./fibf-c $E
 	$T ./fibf-cc $E
 	$T ./fibf-nim $E
+	$T ./fibf-zig $E
 
 forth-bench::
 	$T gforth fibf.fs $E
@@ -36,6 +40,9 @@ forth-silly::
 
 %-cc: %.cpp
 	g++ -O3 -Wall -o $@ $<
+
+%-zig: %.zig
+	zig build-exe $< --output $@ --release-fast
 
 fib-nim: fib.nim
 	nim cpp -d:release $<
