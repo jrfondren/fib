@@ -53,3 +53,6 @@ fib-nim: fib.nim
 fibf-nim: fibf.nim
 	nim cpp -d:release $<
 	mv fibf $@
+
+fib-lua::
+fibf-lua::
