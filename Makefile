@@ -1,7 +1,7 @@
 SHELL=bash
 T=for x in 1 2 3; do time 
 E=; done; echo
-LANGS=ats c cc nim zig
+LANGS=ats c cc lua nim zig
 TARGS=$(patsubst %,fib-%,$(LANGS)) $(patsubst %,fibf-%,$(LANGS))
 
 all:: $(TARGS)
@@ -12,6 +12,7 @@ bench::
 	$T ./fib-ats $E
 	$T ./fib-c $E
 	$T ./fib-cc $E
+	$T luajit -O3 fib.lua $E
 	$T ./fib-nim $E
 	$T ./fib-zig $E
 
@@ -19,6 +20,7 @@ benchf::
 	$T ./fibf-ats $E
 	$T ./fibf-c $E
 	$T ./fibf-cc $E
+	$T luajit -O3 fibf.lua $E
 	$T ./fibf-nim $E
 	$T ./fibf-zig $E
 
